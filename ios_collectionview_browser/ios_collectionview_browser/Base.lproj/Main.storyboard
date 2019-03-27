@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ios_collectionview_browser" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="5zB-f8-nDd">
+                                <rect key="frame" x="0.0" y="23" width="306" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ndx-VW-7UR">
+                                <rect key="frame" x="321" y="28" width="30" height="30"/>
+                                <state key="normal" title="0"/>
+                                <connections>
+                                    <action selector="tappedButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pag-kN-2s1"/>
+                                </connections>
+                            </button>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Jy-NN-REB">
+                                <rect key="frame" x="0.0" y="67" width="375" height="600"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="0Jy-NN-REB" firstAttribute="top" secondItem="5zB-f8-nDd" secondAttribute="bottom" id="5Zf-qv-6AJ"/>
+                            <constraint firstItem="ndx-VW-7UR" firstAttribute="leading" secondItem="5zB-f8-nDd" secondAttribute="trailing" constant="15" id="6Nk-mt-66F"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="0Jy-NN-REB" secondAttribute="bottom" id="AKN-yF-9Yc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ndx-VW-7UR" secondAttribute="trailing" constant="8" id="ChN-t7-Ytn"/>
+                            <constraint firstItem="ndx-VW-7UR" firstAttribute="leading" secondItem="5zB-f8-nDd" secondAttribute="trailing" constant="15" id="IHP-ti-Gk2"/>
+                            <constraint firstAttribute="trailing" secondItem="0Jy-NN-REB" secondAttribute="trailing" id="KIZ-SS-rKF"/>
+                            <constraint firstItem="5zB-f8-nDd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="VeV-4A-hEH"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5zB-f8-nDd" secondAttribute="bottom" constant="600" id="diK-Wt-TEs"/>
+                            <constraint firstItem="ndx-VW-7UR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="k0S-fJ-rjQ"/>
+                            <constraint firstItem="0Jy-NN-REB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="nTy-VD-6ZU"/>
+                            <constraint firstItem="5zB-f8-nDd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="3" id="wYG-5Z-0zz"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ndx-VW-7UR" secondAttribute="bottom" constant="609" id="wlB-0n-9Gi"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="searchBar" destination="5zB-f8-nDd" id="8sB-ZP-rTr"/>
+                        <outlet property="showButton" destination="ndx-VW-7UR" id="pqh-oe-Pwp"/>
+                        <outlet property="webView" destination="0Jy-NN-REB" id="INI-Ts-MlP"/>
+                        <segue destination="q9E-7z-6lB" kind="show" identifier="switchCollectionView" id="Arj-Ng-clb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="94" y="126"/>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="lfe-ML-AjI">
+            <objects>
+                <viewController id="q9E-7z-6lB" customClass="SecondViewController" customModule="ios_collectionview_browser" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nUR-XY-4xB"/>
+                        <viewControllerLayoutGuide type="bottom" id="Oio-Tn-soM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qWQ-Jn-e50">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UbF-wb-nle">
+                                <rect key="frame" x="164" y="28" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="tappedButton2:" destination="q9E-7z-6lB" eventType="touchUpInside" id="f3O-H2-fuR"/>
+                                    <action selector="tappedButton:" destination="q9E-7z-6lB" eventType="touchUpInside" id="oZe-QZ-IMn"/>
+                                </connections>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SLV-xn-3h3">
+                                <rect key="frame" x="0.0" y="67" width="375" height="600"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="QjL-6H-Zpd">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="originalCell" id="VY5-CQ-1fa">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="UbF-wb-nle" id="g0U-XP-3g3"/>
+                        <outlet property="collectionView" destination="SLV-xn-3h3" id="mBF-GQ-TWG"/>
+                        <outlet property="showButton2" destination="UbF-wb-nle" id="Vfb-HT-lXP"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="backWebView" id="laF-Mf-el9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BhS-8K-isM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="824.79999999999995" y="126.38680659670166"/>
+        </scene>
+    </scenes>
+</document>
